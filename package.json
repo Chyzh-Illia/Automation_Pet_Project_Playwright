@@ -1,0 +1,25 @@
+{
+  "name": "automation_pet_project_playwright",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Chyzh-Illia/Automation_Pet_Project_Playwright#readme",
+  "bugs": {
+    "url": "https://github.com/Chyzh-Illia/Automation_Pet_Project_Playwright/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chyzh-Illia/Automation_Pet_Project_Playwright.git"
+  },
+  "license": "ISC",
+  "author": "Chyzh Illia",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {},
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.3.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2"
+  }
+}
