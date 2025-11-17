@@ -1,6 +1,4 @@
-import { time } from "console";
 import { BasePage } from "./BasePage";
-import { TIMEOUT } from "dns";
 
 export class LoginPage extends BasePage{
         /** @param {import ('@playwright/test').Page} */

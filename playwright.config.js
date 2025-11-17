@@ -5,21 +5,21 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default defineConfig({
-  testDir: './', // чтобы видеть и setup, и tests
+  testDir: './tests',
   fullyParallel: true,
   reporter: 'html',
 
   use: {
     baseURL: process.env.BASE_FRONT_URL,
     trace: 'on',
-    screenshot: 'only-on-failure',
+    screenshot: 'on',
     testIdAttribute: 'data-qa',
   },
 
   projects: [
     {
       name: 'setup',
-      testMatch: /setup\/auth\.setup\.js/,
+      testMatch: /tests\/setup\/auth\.setup\.js/,
     },
     {
       name: 'e2e',
