@@ -8,9 +8,9 @@ test.describe('Login on the web', () => {
         await page.goto(process.env.BASE_FRONT_URL);
     })
 
-    test('Open Login Page', async ({page}) => {
+    test('Open Login Page', async ({ page, request, context }) => {
         const mp = new MainPage(page);
         await mp.womenCategoryOpen('Dress', 'Tops', 'Saree');
-        // await mp.veryfingImageBanner();
+        await mp.purchaseFirstItem();
     });
 })
