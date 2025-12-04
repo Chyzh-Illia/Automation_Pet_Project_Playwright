@@ -5,7 +5,7 @@ import fs from 'fs';
 
 const authFile = path.join(__dirname, '../.auth/user.json');
 
-setup('authenticate user', async ({ page }) => {
+setup('authentication user', async ({ page }) => {
   console.log('🚀 Running setup for authentication...');
 
   // Создаём папку, если нет
@@ -18,6 +18,7 @@ setup('authenticate user', async ({ page }) => {
   await page.getByTestId('login-email').fill(process.env.USER_LOGIN);
   await page.getByTestId('login-password').fill(process.env.USER_PASSWORD);
   await page.getByTestId('login-button').click();
+  await page.get
 
   // Проверяем, что вошли
   await expect(page.getByText('Autotest')).toBeVisible({ timeout: 10000 });

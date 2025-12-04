@@ -11,5 +11,6 @@ test.describe('Login on the web', () => {
     test('Open Login Page', async ({page}) => {
         const mp = new MainPage(page);
         await mp.womenCategoryOpen('Dress', 'Tops', 'Saree');
+        // await mp.veryfingImageBanner();
     });
 })

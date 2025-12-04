@@ -19,10 +19,19 @@ export class MainPage extends BasePage {
         this.dressBtn = page.getByRole('link', { name: 'Dress' });
         this.topBtn = page.getByRole('link', { name: 'Tops' });
         this.sareeBtn = page.getByRole('link', { name: 'Saree'});
-        this.imageBanner = page.locator('i.girl.img-responsive');
+        this.imageBanner = page.locator('img[src*="girl1.jpg"]');
         this.switchLeftBannerBtn = page.locator('i.fa.fa-angle-left');
         this.switchRightBannerBtn = page.locator('i.fa.fa-angle-right');
         this.logoMainPage = page.locator('i.logo.pull-left');
+        this.logoMainPage = page.getByTestId('i.logo.pull-left');
+        this.brandPolop = page.getByRole('link', { name: 'Polo' });
+        this.brandHnM = page.getByRole('link', { name: 'H&M' });
+        this.brandMadame = page.getByRole('link', { name: 'Madame' });
+        this.brandMastHarbour = page.getByRole('link', { name: 'Mast & Harbour' });
+        this.brandBabyhug = page.getByRole('link', { name: 'Babyhug' });
+        this.brandAllenSolly = page.getByRole('link', { name: 'Allen Solly' });
+        this.brandKookieKids = page.getByRole('link', { name: 'Kookie Kids' });
+        this.brandBiba = page.getByRole('link', { name: 'Biba' });
     }
 
     async womenCategoryOpen(item1, item2, item3){
@@ -33,7 +42,13 @@ export class MainPage extends BasePage {
     }
 
     async veryfingImageBanner() {
-        
+        await expect(this.imageBanner).toBeVisible();
+        await this.switchRightBannerBtn.click();
+        await expect(this.imageBanner).toBeVisible();
+        await this.switchRightBannerBtn.click();
+        await expect(this.imageBanner).toBeVisible();
     }
+
+    
 
 }
