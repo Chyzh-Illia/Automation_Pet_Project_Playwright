@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { BasePage } from '../Pages/BasePage';
 import { MainPage } from '../Pages/MainPage';
 import { CartPage } from '../Pages/CartPage';
+import { AddressCheckoutPage } from '../Pages/AddressCheckoutPage';
 
 test.describe('Cart Page Tests: Adding items to cart, Verifying items in cart table', () => {
     test.beforeEach( async ({page}) => {
@@ -20,6 +21,7 @@ test.describe('Cart Page Tests: Adding items to cart, Verifying items in cart ta
     });
 
     test('Proceed to checkout, verify the Address Details page', async ({ page }) => { 
-        
+        const cp = new AddressCheckoutPage(page);
+        await cp.checkingPage();
     });
 });

@@ -7,7 +7,8 @@ test.describe('Login on the main page', () => {
         await page.goto(process.env.BASE_FRONT_URL);
     });
 
-    // test('Open Login Page, Verify UI elements', async ({ page, request, context }) => {
-       
-    // });
+    test('Open Login Page, Verify UI elements', async ({ page, request, context }) => {
+        const mp = new MainPage(page);
+        await mp.checkingMainPage();
+    });
 })

@@ -6,6 +6,7 @@ export class MainPage extends BasePage {
         /** @param {import ('@playwright/test').Page} */
     constructor(page, url) {
         super (page, url);
+        this.coruselBanner = page.getByText('All QA engineers can use this').nth(0);
         this.homePageBtn = page.locator('i.fa.fa-home');
         this.productsBtn = page.locator('i.material-icons.card_travel');
         this.cartBtn = page.locator('i.fa.fa-shopping-cart');
@@ -39,6 +40,10 @@ export class MainPage extends BasePage {
         this.textModalWindow = page.getByText('Your product has been added to cart.');
         this.viewCartBtnModalWindow = page.getByRole('link', { name: 'View Cart' });
         this.continueShoppingBtnModalWindow = page.getByRole('button', { name: 'Continue Shopping' });
+    };
+
+    async checkingMainPage() {
+        await expect(this.coruselBanner).toHaveText('All QA engineers can use this website for automation practice and API testing either they are at beginner or advance level. This is for everybody to help them brush up their automation skills.');
     };
 
     async womenCategoryOpen(item1, item2, item3){
