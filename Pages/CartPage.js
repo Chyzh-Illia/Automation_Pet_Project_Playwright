@@ -14,7 +14,7 @@ export class CartPage extends BasePage {
     }
 
     async checkingCartTableNotEmpty() {
-        await this.page.goto('https://automationexercise.com/view_cart');
+        await this.page.goto(process.env.VIEW_CART_PAGE_URL);
         await expect(this.proceedToCheckoutBtn).toBeVisible();
         await expect(this.shoppingCartText).toBeVisible();
         await expect(this.cartTable).toBeVisible();
@@ -27,7 +27,7 @@ export class CartPage extends BasePage {
     }
 
     async redirectToCheckout() {
-        await this.page.goto('https://automationexercise.com/view_cart');
+        await this.page.goto(process.env.VIEW_CART_PAGE_URL);
         await expect(this.proceedToCheckoutBtn).toBeVisible();
         await this.proceedToCheckoutBtn.click();
     }
