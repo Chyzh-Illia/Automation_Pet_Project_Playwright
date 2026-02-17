@@ -26,6 +26,12 @@ export class CartPage extends BasePage {
     
     }
 
+    async redirectToCheckout() {
+        await this.page.goto('https://automationexercise.com/view_cart');
+        await expect(this.proceedToCheckoutBtn).toBeVisible();
+        await this.proceedToCheckoutBtn.click();
+    }
+
     async AddressingCheckout() {
         await expect(this.proceedToCheckoutBtn).toBeVisible();
         await this.proceedToCheckoutBtn.click();

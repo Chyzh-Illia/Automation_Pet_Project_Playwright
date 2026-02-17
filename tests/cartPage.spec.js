@@ -21,7 +21,9 @@ test.describe('Cart Page Tests: Adding items to cart, Verifying items in cart ta
     });
 
     test('Proceed to checkout, verify the Address Details page', async ({ page }) => { 
-        const cp = new AddressCheckoutPage(page);
-        await cp.checkingPage();
+        const ac = new AddressCheckoutPage(page);
+        const cp = new CartPage(page);
+        await cp.redirectToCheckout();
+        await ac.checkingPage('Some comment for the order');
     });
 });
