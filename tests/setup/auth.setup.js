@@ -3,7 +3,7 @@ import { test as setup, expect } from '@playwright/test';
 import path from 'path';
 import fs from 'fs';
 
-const authFile = path.join(__dirname, '../.auth/user.json');
+const authFile = path.join(process.cwd(), '.auth', 'user.json');
 
 setup('authentication user', async ({ page }) => {
   console.log('🚀 Running setup for authentication...');

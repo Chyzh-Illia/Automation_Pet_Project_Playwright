@@ -74,6 +74,4 @@ export class MainPage extends BasePage {
         await this.continueShoppingBtnModalWindow.click();
     };
 
-    
-
 }
